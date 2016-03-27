@@ -12,5 +12,10 @@
             "email": "nbish11@hotmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "php": ">=5.3.3"
+    },
+    "autoload": {
+      "classmap": ["src"]
+    }
 }
