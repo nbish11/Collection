@@ -2,7 +2,8 @@
     "name": "nbish11/collection",
     "description": "A simple interface for defining data collections in PHP.",
     "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+        "phpunit/phpunit": "4.8.*",
+        "squizlabs/php_codesniffer": "^2.5"
     },
     "license": "GPLv2",
     "authors": [
