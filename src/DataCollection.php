@@ -114,7 +114,7 @@ class DataCollection implements Collection
      */
     public function merge(array $data)
     {
-        $this->collection = array_merge($this->collection, $data);
+        $this->collection = array_replace_recursive($this->collection, $data);
 
         return $this;
     }
@@ -150,9 +150,9 @@ class DataCollection implements Collection
     /**
      * @see \Collection::keys()
      */
-    public function keys($strict = false)
+    public function keys()
     {
-        return array_keys($this->collection, null, $strict);
+        return array_keys($this->collection);
     }
 
     /**
@@ -170,9 +170,9 @@ class DataCollection implements Collection
      *
      * @return \DataCollection
      */
-    public function map(Closure $callback)
+    public function map(Closure $callback, $userdata = null)
     {
-        $this->collection = array_map($callback, $this->collection);
+        array_walk_recursive($this->collection, $callback, $userdata);
 
         return $this;
     }
@@ -182,7 +182,7 @@ class DataCollection implements Collection
      */
     public function isEmpty()
     {
-        return ! $this->collection;
+        return empty($this->collection);
     }
 
     /**

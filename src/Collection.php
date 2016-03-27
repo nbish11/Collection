@@ -121,11 +121,9 @@ interface Collection extends IteratorAggregate, ArrayAccess, Countable
     /**
      * Returns all the keys in the collection.
      *
-     * @param boolean $strict  Use the strict comparison operator (===).
-     *
      * @return array
      */
-    public function keys($strict);
+    public function keys();
 
     /**
      * Return all items within the collection.
